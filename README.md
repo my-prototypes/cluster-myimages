@@ -34,8 +34,8 @@ Devera aparecer
 ```bash
 REPOSITORY             TAG       IMAGE ID       CREATED          SIZE
 armandoss/app-server   latest    ????????????   16 minutes ago   548MB
-mysql                  5.6       ????????????   20 months ago    303MB
 ```
+Obs: a [imagem do MySQL](https://hub.docker.com/_/mysql) será baixada do docker repository assim que o cluster for executado
 
 ## 2. Suba os containers via docker compose up
 
