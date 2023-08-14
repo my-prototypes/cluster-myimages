@@ -6,7 +6,7 @@ MAINTAINER Armando Soares <armando@ufpi.edu.br>
 WORKDIR /root
 
 # install git, pip, vim
-RUN apt-get update && apt-get install -y git python3 python-pip vim
+RUN apt-get update && apt-get install -y git python3 python3-pip vim
 
 # Faz o clone de repositorio tflk
 RUN git clone https://github.com/my-prototypes/tflk.git
