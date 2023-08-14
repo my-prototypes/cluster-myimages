@@ -11,7 +11,8 @@ Cria um cluster da aplicação myimages (https://github.com/my-prototypes/tflk.g
 ├── docker-compose.yml
 └── docs
     ├── Sobre_o_Docker.md
-    └── Cluster_com_Docker.md
+    ├── Cluster_com_Docker.md
+    └── Balanceador_Carga.md
 ```
 
 # Detalhamento da aplicação
