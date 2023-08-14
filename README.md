@@ -19,6 +19,41 @@ Cria um cluster da aplicação myimages (https://github.com/my-prototypes/tflk.g
 
 O cluster tem 2 nós sendo um nó do servidor de aplicação e outro nó do banco de dados. 
 
+```bash
+@startuml MyImages
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/html5.puml
+!include DEVICONS/python.puml
+!include DEVICONS/mysql.puml
+!include FONTAWESOME/users.puml
+
+Person(user1, "User1")
+Container(web_client1, "Browser1", "html", "The main interface that the customer interacts with", $sprite="html5") 
+
+System_Boundary(c1, "MyImages Web Aplication Instance 1") {    
+    Container(web_app1, "Web Application", "Python, Flask", "Allows users to manage images", $sprite="python")    
+    Container(archive1, "archive1", "File Images")
+}
+
+System_Boundary(c2, "Data Base"){
+    ContainerDb(db, "Database", "MySQL", "Holds users and images information", $sprite="mysql")
+}
+
+Rel_Down(user1, web_client1, "Uses")
+Rel_Down(web_client1, web_app1, "Uses")
+Rel_Down(web_app1,db, "session1 Reads/Writes")
+Rel_L(web_app1, archive1, "Writes", "files")
+
+SHOW_LEGEND()
+
+@enduml
+```
+
+![Cluster básico MyImage](https://github.com/my-prototypes/cluster-myimages/blob/main/docs/myimage_cluster_basico.png "Diagrama Cluster Básico do MyImage")
+
 ## 1. Faça um docker compose para buidar as imagens necessarias
 
 ```shell
