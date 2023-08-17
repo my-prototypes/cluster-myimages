@@ -90,6 +90,10 @@ CONTAINER ID        IMAGE                  COMMAND                  CREATED     
 ????????????        mysql:5.6              "docker-entrypoint.s…"   2 minutes ago       Up About a minute   0.0.0.0:3306->3306/tcp   compose_mydb_1
 ```
 
-### 4. Abra o browser em http://localhost:5000
+## 4. Abra o browser em http://localhost:5000
 
 Obs: para persistir os dados do banco de dados e preciso criar um volume no arquivo docker-compose.yml
+
+## 5. You can perform tests using Play-with-Docker
+
+Run steps 1 and 2 to execute this cluster in [play-with-docker](https://labs.play-with-docker.com)
