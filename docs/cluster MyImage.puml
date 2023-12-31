@@ -1,0 +1,51 @@
+@startuml MyImages
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/html5.puml
+!include DEVICONS/python.puml
+!include DEVICONS/mysql.puml
+!include DEVICONS/nginx.puml
+!include FONTAWESOME/users.puml
+
+Person(user1, "User1")
+Container(web_client1, "Browser1", "html", "The main interface that the customer interacts with", $sprite="html5") 
+
+Person(user2, "User2")
+Container(web_client2, "Browser2", "html", "The main interface that the customer interacts with", $sprite="html5") 
+
+System_Boundary(c0, "Load Balancer"){
+    Container(load_balancer, "Load Balancer", "Nginx", "Control users requests", $sprite="nginx")
+}
+
+System_Boundary(c1, "MyImages Web Aplication Instance 1") {    
+    Container(web_app1, "Web Application", "Python, Flask", "Allows users to manage images", $sprite="python")    
+}
+
+System_Boundary(c2, "MyImages Web Aplication Instance 2") {    
+    Container(web_app2, "Web Application", "Python, Flask", "Allows users to manage images", $sprite="python")
+}
+
+System_Boundary(c3, "Data Base"){
+    ContainerDb(db, "Database", "MySQL", "Holds users and images information", $sprite="mysql")
+}
+
+System_Boundary(c4, "File Images"){
+    Container(archive1, "Files", "File Images")
+}
+
+Rel_Down(user1, web_client1, "Uses")
+Rel_Down(web_client1, load_balancer, "Uses", "https")
+Rel_Down(user2, web_client2, "Uses")
+Rel_Down(web_client2, load_balancer, "Uses", "https")
+Rel_Down(load_balancer, web_app1, "Uses session1", "https")
+Rel_Down(load_balancer, web_app2, "Uses session2", "https")
+Rel_Down(web_app1,db, "session1 Reads/Writes")
+Rel_L(web_app1, archive1, "Writes", "files")
+Rel_L(web_app2, archive1, "Writes", "files")
+Rel_Down(web_app2,db, "session2 Reads/Writes")
+
+SHOW_LEGEND()
+
+@enduml
