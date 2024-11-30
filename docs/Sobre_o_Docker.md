@@ -4,19 +4,19 @@ O Docker é uma plataforma que permite aos desenvolvedores criar, implantar e ex
 
 Logo abaixo Aqui estão alguns dos principais conceitos e termos relacionados ao Docker:
 
-Imagem: uma imagem é um pacote leve e autônomo que contém tudo o que é necessário para executar um software, incluindo código, tempo de execução, bibliotecas e variáveis de ambiente.
+**Imagem**: uma imagem é um pacote leve e autônomo que contém tudo o que é necessário para executar um software, incluindo código, tempo de execução, bibliotecas e variáveis de ambiente.
 
-Contêiner: Um contêiner é uma instância de uma imagem que está sendo executada como um processo isolado em uma máquina host. Os container compartilham o kernel do sistema operacional do host, mas são isolados uns dos outros.
+**Contêiner**: Um contêiner é uma instância de uma imagem que está sendo executada como um processo isolado em uma máquina host. Os container compartilham o kernel do sistema operacional do host, mas são isolados uns dos outros.
 
-Dockerfile: Um Dockerfile é um arquivo de texto que contém instruções para criar uma imagem do Docker. Ele define a imagem base, o código do aplicativo, as dependências e as definições de configuração.
+**Dockerfile**: Um Dockerfile é um arquivo de texto que contém instruções para criar uma imagem do Docker. Ele define a imagem base, o código do aplicativo, as dependências e as definições de configuração.
 
-Registro: um registro do Docker é um repositório que armazena imagens do Docker. O Docker Hub é um registro público popular, mas você também pode configurar registros privados para uso da sua organização.
+**Registro**: um registro do Docker é um repositório que armazena imagens do Docker. O Docker Hub é um registro público popular, mas você também pode configurar registros privados para uso da sua organização.
 
-Compose: Docker Compose é uma ferramenta para definir e executar aplicativos Docker de vários container. Ele usa um arquivo YAML para configurar os serviços, redes e volumes necessários para seu aplicativo.
+**Compose**: Docker Compose é uma ferramenta para definir e executar aplicativos Docker de vários container. Ele usa um arquivo YAML para configurar os serviços, redes e volumes necessários para seu aplicativo.
 
-Swarm: Docker Swarm é a solução nativa de clustering e orquestração do Docker para gerenciar um cluster de nós do Docker. Ele permite que você implante, dimensione e gerencie container em vários hosts.
+**Swarm**: Docker Swarm é a solução nativa de clustering e orquestração do Docker para gerenciar um cluster de nós do Docker. Ele permite que você implante, dimensione e gerencie container em vários hosts.
 
-Kubernetes: embora não faça parte do próprio Docker, o Kubernetes é uma plataforma de orquestração de contêiner amplamente usada que pode gerenciar a implantação, dimensionamento e gerenciamento de aplicativos em contêiner.
+**Kubernetes**: embora não faça parte do próprio Docker, o Kubernetes é uma plataforma de orquestração de contêiner amplamente usada que pode gerenciar a implantação, dimensionamento e gerenciamento de aplicativos em contêiner.
 
 Logo abaixo seguem alguns benefícios oferecidos pelo Docker: 
 
